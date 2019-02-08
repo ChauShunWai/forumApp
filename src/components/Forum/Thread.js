@@ -1,6 +1,6 @@
 import React from 'react'
 import { reduxForm } from 'redux-form'
-import { Form } from 'react-bootstrap'
+import { Form, Card } from 'react-bootstrap'
 import { connect } from 'react-redux'
 import CreateComment from './CreateComment'
 import { loadThreads, createComment } from '../../actions/index'
