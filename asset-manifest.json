@@ -1,0 +1,11 @@
+{
+  "main.js": "/forumApp/static/js/main.b0f83eeb.chunk.js",
+  "main.js.map": "/forumApp/static/js/main.b0f83eeb.chunk.js.map",
+  "static/js/1.f9e842b0.chunk.js": "/forumApp/static/js/1.f9e842b0.chunk.js",
+  "static/js/1.f9e842b0.chunk.js.map": "/forumApp/static/js/1.f9e842b0.chunk.js.map",
+  "runtime~main.js": "/forumApp/static/js/runtime~main.4cc1c6ab.js",
+  "runtime~main.js.map": "/forumApp/static/js/runtime~main.4cc1c6ab.js.map",
+  "index.html": "/forumApp/index.html",
+  "precache-manifest.4683c749863c54bc5bdf7823604bba0e.js": "/forumApp/precache-manifest.4683c749863c54bc5bdf7823604bba0e.js",
+  "service-worker.js": "/forumApp/service-worker.js"
+}
