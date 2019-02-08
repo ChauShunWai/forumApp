@@ -1,5 +1,5 @@
 import axios from 'axios'
 
 export default axios.create({
-    baseURL: 'https://jsonserverforforumapp.herokuapp.com'
+    baseURL: 'http://my-json-server.typicode.com/ChauShunWai/api'
 })
