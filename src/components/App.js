@@ -7,7 +7,8 @@ import {
     Materials, 
     MainPage, 
     Thread,
-    EditThread
+    EditThread,
+    EditComment
 } from './index'
 import { Container, Image} from 'react-bootstrap'
 import history from '../history'
@@ -28,6 +29,7 @@ class App extends React.Component {
                             <Route path="/thread/:id" exact component={Thread} />
                             <Route path="/createPost" exact component={CreateThread} />
                             <Route path="/editThread/:id" exact component={EditThread} />
+                            <Route path="/editComment/:id" exact component={EditComment} />
                         </Switch>
                     </Container>
                 </React.Fragment>

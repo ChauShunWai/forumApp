@@ -4,6 +4,7 @@ import Thread from './Forum/Thread'
 import MainPage from './MainPage/MainPage'
 import Materials from './Materials/Materials'
 import EditThread from './Forum/EditThread'
+import EditComment from './Forum/EditComment'
 
 export {
     Forum,
@@ -11,5 +12,6 @@ export {
     Materials,
     CreateThread,
     Thread,
-    EditThread
+    EditThread,
+    EditComment
 };

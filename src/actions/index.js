@@ -64,22 +64,25 @@ export const editThread = (id, val) => async dispatch => {
         type: EDIT_THREAD,
         payload: response.data
     })
-    history.push('/forum')
+    history.goBack()
 }
 
 export const deleteThread = (id) => async (dispatch) => {
     await api.delete(`/threads/${id}`, id)
-    dispatch({
-        type: DELETE_THREAD,
-        payload: id
-    })
+    await api.delete(`/comments?threadId=${id}`).catch(
+        dispatch({
+            type: DELETE_THREAD,
+            payload: id
+        })
+    ).then(history.push('/forum'))
+    
 }
 
-export const loadComments = (threadId) => async dispatch => {
+export const loadComments = () => async dispatch => {
     const response = await api.get(`/comments`)
     dispatch({
         type: FETCH_COMMENTS,
-        payload: response.data.filter(element => element.threadId === threadId)
+        payload: response.data
     })
 }
 
@@ -92,8 +95,8 @@ export const loadComment = (id) => async dispatch => {
 }
 
 export const createComment = (val, threadId) => async (dispatch, getState) => {
-    const { userId } = getState().auth;
-    const response = await api.post(`/comments`, { ...val, threadId, userId });
+    const { userId, userName } = getState().auth;
+    const response = await api.post(`/comments`, { ...val, threadId, userId, userName });
     dispatch({
         type: CREATE_COMMENT,
         payload: response.data
@@ -108,10 +111,11 @@ export const editComment = (id, val) => async dispatch => {
     })
 }
 
-export const deleteComment = (id) => async dispatch => {
+export const deleteComment = (id, threadId) => async (dispatch,getState) => {
     await api.delete(`/comments/${id}`)
     dispatch({
         type: DELETE_COMMENT,
         payload: id
     })
+    history.push(`/thread/${threadId}`);
 }
