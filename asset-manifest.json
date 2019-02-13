@@ -1,11 +1,11 @@
 {
-  "main.js": "/forumApp/static/js/main.b0f83eeb.chunk.js",
-  "main.js.map": "/forumApp/static/js/main.b0f83eeb.chunk.js.map",
-  "static/js/1.f9e842b0.chunk.js": "/forumApp/static/js/1.f9e842b0.chunk.js",
-  "static/js/1.f9e842b0.chunk.js.map": "/forumApp/static/js/1.f9e842b0.chunk.js.map",
+  "main.js": "/forumApp/static/js/main.965947b2.chunk.js",
+  "main.js.map": "/forumApp/static/js/main.965947b2.chunk.js.map",
+  "static/js/1.27b9cefe.chunk.js": "/forumApp/static/js/1.27b9cefe.chunk.js",
+  "static/js/1.27b9cefe.chunk.js.map": "/forumApp/static/js/1.27b9cefe.chunk.js.map",
   "runtime~main.js": "/forumApp/static/js/runtime~main.4cc1c6ab.js",
   "runtime~main.js.map": "/forumApp/static/js/runtime~main.4cc1c6ab.js.map",
   "index.html": "/forumApp/index.html",
-  "precache-manifest.4683c749863c54bc5bdf7823604bba0e.js": "/forumApp/precache-manifest.4683c749863c54bc5bdf7823604bba0e.js",
+  "precache-manifest.1761ce9d7fea57839d3b4d25cd4146f0.js": "/forumApp/precache-manifest.1761ce9d7fea57839d3b4d25cd4146f0.js",
   "service-worker.js": "/forumApp/service-worker.js"
 }
