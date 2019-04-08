@@ -25,7 +25,7 @@ class App extends React.Component {
                         <Switch>
                             {/* <Route path="/" exact component={MainPage} /> */}
                             {/* <Route path="/materials" exact component={Materials} /> */}
-                            <Route path="/forum" exact component={Forum} />
+                            <Route path="/" exact component={Forum} />
                             {/* <Route path="/" exact component={Forum} /> */}
                             <Route path="/thread/:id" exact component={Thread} />
                             <Route path="/createPost" exact component={CreateThread} />

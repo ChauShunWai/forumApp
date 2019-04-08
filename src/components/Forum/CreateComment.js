@@ -7,7 +7,7 @@ class CreateComment extends React.Component {
     signInCheck = () => {
         if (this.props.isSignedIn) {
             return (
-                <CommentForm onSubmit={this.props.onSubmit} />
+                <CommentForm formId="create_comment" onSubmit={this.props.onSubmit} initialValues={{'Comment': null}} />
             )
         } else {
             return <div> Log In first</div>
@@ -24,8 +24,9 @@ class CreateComment extends React.Component {
     }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
     return {
+        form: ownProps.formId,
         isSignedIn: state.auth.isSignedIn
     }
 }

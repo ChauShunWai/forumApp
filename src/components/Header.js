@@ -7,7 +7,7 @@ const Header = () => {
     return (
         <React.Fragment>
             <Navbar bg="dark" variant="dark" expand="lg">
-                <Link to="/forum">
+                <Link to="/">
                     <Navbar.Brand>
                         ForumApp
                     </Navbar.Brand>

@@ -4,7 +4,6 @@ import {
     CREATE_THREAD,
     EDIT_THREAD,
     DELETE_THREAD
-
 } from '../actions/types.js'
 import _ from 'lodash'
 

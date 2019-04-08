@@ -63,5 +63,7 @@ const validate = val => {
 
 export default reduxForm({
     form: 'CommentForm',
+    destroyOnUnmount: false,
+    enableReinitialize: true,
     validate
 })(CommentForm);
