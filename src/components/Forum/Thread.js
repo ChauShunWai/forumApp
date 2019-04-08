@@ -8,17 +8,20 @@ import history from '../../history'
 import { loadThread, loadThreads, loadComments, createComment, deleteThread, deleteComment } from '../../actions/index'
 
 class Thread extends React.Component {
-    componentDidMount(){
+    componentDidMount() {
         this.props.loadComments();
         this.props.loadThread(this.props.match.params.id)
     }
 
     onSubmit = (val) => {
-        this.props.createComment(val, this.props.match.params.id);
+        this.props.createComment(val, this.props.match.params.id)
+            .then(
+                () => this.props.loadComments()
+            )
     }
 
     renderThread = () => {
-        if(!this.props.thread || !this.props.isSignedIn){
+        if (!this.props.thread || !this.props.isSignedIn) {
             return <h1>loading</h1>
         }
         return (
@@ -40,24 +43,24 @@ class Thread extends React.Component {
     }
 
     renderComments = () => {
-        if(!this.props.comments || !this.props.isSignedIn){
+        if (!this.props.comments || !this.props.isSignedIn) {
             return <h1>loading/ you are not signed in</h1>
         }
-        return this.props.comments.map( comment =>{ 
-                return (
-                    <Card key={comment.id}>
-                        <Card.Body> 
-                            <Card.Title>
-                                {comment.userName}
-                            </Card.Title>
-                            <Card.Text>
-                                {comment.Comment}
-                            </Card.Text>
-                        </Card.Body>
-                        {this.EditOrDeleteComments(comment)}
-                    </Card>
-                )
-            }
+        return this.props.comments.map(comment => {
+            return (
+                <Card key={comment.id}>
+                    <Card.Body>
+                        <Card.Title>
+                            {comment.userName}
+                        </Card.Title>
+                        <Card.Text>
+                            {comment.Comment}
+                        </Card.Text>
+                    </Card.Body>
+                    {this.EditOrDeleteComments(comment)}
+                </Card>
+            )
+        }
         )
     }
 
@@ -76,7 +79,7 @@ class Thread extends React.Component {
                             title='DELETE COMMENT'
                             message="you sure you want to delete?"
                             button="DELETE"
-                            onClick={() => this.props.deleteComment(element.id, this.props.match.params.id)} 
+                            onClick={() => this.props.deleteComment(element.id, this.props.match.params.id)}
                         />
                     </div>
                 </>
@@ -89,10 +92,11 @@ class Thread extends React.Component {
             <button
                 onClick={() => {
                     this.props.loadThreads().then(
-                            (()=>{if(!this.props.thread){
+                        (() => {
+                            if (!this.props.thread) {
                                 return history.push('/forum')
-                                }
-                            })
+                            }
+                        })
                     )
                     this.props.loadComments();
                 }}
@@ -124,7 +128,7 @@ class Thread extends React.Component {
                             title='DELETE THREAD'
                             message="you sure you want to delete?"
                             button="DELETE"
-                            onClick={() => this.props.deleteThread(element.id)} 
+                            onClick={() => this.props.deleteThread(element.id)}
                         />
                     </div>
                 </>
@@ -138,31 +142,31 @@ class Thread extends React.Component {
                 {this.renderThread()}
                 {this.renderComments()}
                 {this.renderRefresh()}
-                <CreateComment onSubmit={this.onSubmit}/>
+                <CreateComment onSubmit={this.onSubmit} />
             </>
         )
     }
 }
 
 const mapStateToProps = (state, ownProps) => {
-    const {id} = ownProps.match.params;
+    const { id } = ownProps.match.params;
     const comments = Object.values(state.comments).filter(element => {
         return element.threadId === id;
     })
     return {
         thread: state.threads[id],
         comments,
-        isSignedIn : state.auth.isSignedIn,
-        userId : state.auth.userId
+        isSignedIn: state.auth.isSignedIn,
+        userId: state.auth.userId
     }
 }
 
 export default connect(
-    mapStateToProps, { 
-        loadThread, 
+    mapStateToProps, {
+        loadThread,
         loadThreads,
-        loadComments, 
-        createComment, 
-        deleteComment, 
-        deleteThread 
+        loadComments,
+        createComment,
+        deleteComment,
+        deleteThread
     })(Thread)

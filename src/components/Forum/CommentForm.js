@@ -25,11 +25,11 @@ class CommentForm extends React.Component {
 
     onSubmit = (val) => {
         this.props.onSubmit(val);
-        //this.props.reset();
+        this.props.reset()
     }
 
     renderForm = () => {
-        return(
+        return (
             <Form onSubmit={this.props.handleSubmit(this.onSubmit)}>
                 <Form.Group>
                     <Field name="Comment"
@@ -41,13 +41,13 @@ class CommentForm extends React.Component {
                     Submit
                 </Button>
             </Form>
-        ) 
+        )
     }
 
     render() {
         return (
             <div>
-                { this.renderForm() }
+                {this.renderForm()}
             </div>
         )
     }

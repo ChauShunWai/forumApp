@@ -55,7 +55,7 @@ export const createThread = (val) => async (dispatch, getState) => {
         type: CREATE_THREAD,
         payload: response.data
     })
-    history.push('/forum');
+    history.push('/');
 }
 
 export const editThread = (id, val) => async dispatch => {
@@ -74,7 +74,7 @@ export const deleteThread = (id) => async (dispatch) => {
             type: DELETE_THREAD,
             payload: id
         })
-    ).then(history.push('/forum')
+    ).then(history.push('/')
     )
 }
 
@@ -101,6 +101,7 @@ export const createComment = (val, threadId) => async (dispatch, getState) => {
         type: CREATE_COMMENT,
         payload: response.data
     })
+    //history.push(`/thread/${threadId}`)
 }
 
 export const editComment = (id, val) => async dispatch => {
