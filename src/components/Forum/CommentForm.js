@@ -25,7 +25,7 @@ class CommentForm extends React.Component {
 
     onSubmit = (val) => {
         this.props.onSubmit(val);
-        this.props.reset();
+        //this.props.reset();
     }
 
     renderForm = () => {
@@ -56,7 +56,7 @@ class CommentForm extends React.Component {
 const validate = val => {
     const errors = {};
     if (!val.Comment) {
-        errors.content = 'ENTER COMMENT'
+        errors.Comment = 'ENTER COMMENT'
     }
     return errors;
 }

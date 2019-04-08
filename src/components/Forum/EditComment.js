@@ -28,12 +28,13 @@ class EditComment extends React.Component {
         if (this.props.userId !== this.props.comment.userId) {
             return <div>You are not the creator</div>
         }
+        console.log(_.pick(this.props.comment, 'Comment'))
         return (
             <div>
                 <h3 className="d-flex justify-content-center">Edit a Comment</h3>
                 <CommentForm
                     onSubmit={this.onSubmit}
-                    initialValues={_.pick(this.props.comment, 'Comment')}
+                    initialValues ={_.pick(this.props.comment, 'Comment')}
                 />
             </div>
         )

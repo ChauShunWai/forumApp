@@ -4,8 +4,8 @@ import { Router, Route, Switch } from 'react-router-dom'
 import { 
     Forum, 
     CreateThread, 
-    Materials, 
-    MainPage, 
+    //Materials, 
+    //MainPage, 
     Thread,
     EditThread,
     EditComment
@@ -23,9 +23,10 @@ class App extends React.Component {
                     <Container>
                         <Image src="https://www.mba.ust.hk/img/imagecache/_files_1_hkust_sundial_2014_leading_global_business_school__1966x640_1c85ffffff1.jpg" fluid />
                         <Switch>
-                            <Route path="/" exact component={MainPage} />
-                            <Route path="/materials" exact component={Materials} />
+                            {/* <Route path="/" exact component={MainPage} /> */}
+                            {/* <Route path="/materials" exact component={Materials} /> */}
                             <Route path="/forum" exact component={Forum} />
+                            {/* <Route path="/" exact component={Forum} /> */}
                             <Route path="/thread/:id" exact component={Thread} />
                             <Route path="/createPost" exact component={CreateThread} />
                             <Route path="/editThread/:id" exact component={EditThread} />

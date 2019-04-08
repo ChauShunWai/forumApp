@@ -74,8 +74,8 @@ export const deleteThread = (id) => async (dispatch) => {
             type: DELETE_THREAD,
             payload: id
         })
-    ).then(history.push('/forum'))
-    
+    ).then(history.push('/forum')
+    )
 }
 
 export const loadComments = () => async dispatch => {
@@ -109,9 +109,10 @@ export const editComment = (id, val) => async dispatch => {
         type: EDIT_COMMENT,
         payload: response.data
     })
+    history.goBack();
 }
 
-export const deleteComment = (id, threadId) => async (dispatch,getState) => {
+export const deleteComment = (id, threadId) => async (dispatch, getState) => {
     await api.delete(`/comments/${id}`)
     dispatch({
         type: DELETE_COMMENT,

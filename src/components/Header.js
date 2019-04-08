@@ -7,25 +7,25 @@ const Header = () => {
     return (
         <React.Fragment>
             <Navbar bg="dark" variant="dark" expand="lg">
-                <Link to="/">
+                <Link to="/forum">
                     <Navbar.Brand>
-                        Tutor
+                        ForumApp
                     </Navbar.Brand>
                 </Link>
 
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
-                        <Link className="nav-link" to="/materials">
+                        {/* <Link className="nav-link" to="/materials">
                             <Nav.Item> 
                                 Materials
                             </Nav.Item>
-                        </Link>
-                        <Link className="nav-link" to="/forum">
+                        </Link> */}
+                        {/* <Link className="nav-link" to="/forum">
                             <Nav.Item>
                                 Forum
                             </Nav.Item>
-                        </Link>
+                        </Link> */}
                         <GoogleAuth />
                     </Nav>
                 </Navbar.Collapse>
